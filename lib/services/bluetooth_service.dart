@@ -82,7 +82,7 @@ class BleService extends ChangeNotifier {
     
     try {
       await fbp.FlutterBluePlus.startScan(
-        timeout: const Duration(seconds: 15),
+        timeout: const Duration(seconds: 8),
         androidUsesFineLocation: true,
       );
       
@@ -97,7 +97,7 @@ class BleService extends ChangeNotifier {
       });
       
       // Stop scanning after timeout
-      await Future.delayed(const Duration(seconds: 15));
+      await Future.delayed(const Duration(seconds: 8));
       await stopScan();
     } catch (e) {
       _statusMessage = 'Scan error: $e';
